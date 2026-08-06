@@ -1,0 +1,24 @@
+{
+  "name": "Java Spring Boot Dev",
+  "image": "mcr.microsoft.com/devcontainers/java:21",
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "21",
+      "installGradle": true,
+      "installMaven": true
+    },
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/postgresql:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "vmware.vscode-spring-boot",
+        "vscjava.vscode-spring-initializr"
+      ]
+    }
+  },
+  "forwardPorts": [8080, 5432],
+  "postCreateCommand": "java -version && mvn -version"
+}

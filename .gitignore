@@ -1,0 +1,74 @@
+## Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+## Editor / IDE files
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+*.swp
+*.swo
+*~
+
+## Logs
+*.log
+logs/
+
+## Environment / secrets
+.env
+.env.*
+!.env.example
+
+## Dependency caches
+node_modules/
+vendor/
+packages/
+
+## Build output
+dist/
+build/
+out/
+target/
+bin/
+obj/
+
+## Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+## Java / Kotlin / Gradle
+.gradle/
+*.class
+
+## .NET
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Archives / packaged artifacts
+*.zip
+*.tar
+*.gz
+*.rar
+*.7z
+
+## Coverage / test reports
+coverage/
+*.lcov
+
+## Temporary files
+tmp/
+temp/
+
+

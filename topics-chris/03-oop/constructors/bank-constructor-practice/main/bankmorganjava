@@ -1,0 +1,22 @@
+public class BankMorganJava {
+    public static void main(String[] args) {
+        try {
+            // Try to use a compile-time Banking class if available
+            try {
+                Class<?> bc = Class.forName("Banking");
+                Object banking = bc.getDeclaredConstructor().newInstance();
+                System.out.println("Connected to Banking: " + banking);
+                return;
+            } catch (ClassNotFoundException e) {
+                // Fall through to reflection with package guess
+            }
+
+            // Try to find any class named Banking in the classpath
+            Class<?>[] classes = new Class<?>[0];
+            // As a last resort, inform the user
+            System.out.println("Banking class not found on classpath. Please ensure Banking.java is compiled and on the classpath.");
+        } catch (Exception ex) {
+            System.out.println("Failed to connect to Banking: " + ex);
+        }
+    }
+}

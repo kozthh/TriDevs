@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <link rel="stylesheet" href="HOMEPAGE.css">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+       <title>AutoBayPh | Home</title>
+</head>
+<body>
+       <header>
+              <nav>
+                     <h1 class="title">AutoBayPh</h1>
+                     <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Categories</a></li>
+                            <li><a href="#">Cart</a></li>
+                            <li><a href="#">Search</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Settings</a></li>
+                            <!-- 
+                            <li><a href="#">Login/Register</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">My Account</a></li>
+                                   SOON TO ADD UNDER SETTINGS
+                            -->
+                     </ul>
+              </nav>
+              <div class="banner">
+                     <div class="slide-wrapper">
+                            <div class="slider">
+                                   <img src = "IMAGES/AUTOBAYPH BANNER.png" alt="AutoBayPh Banner">
+                                   <img src = "IMAGES/BYD BANNER.png" alt="BYD Banner">
+                                   <img src = "IMAGES/GEELY BANNER.png" alt="GEELY Banner">
+                                   <img src = "IMAGES/LETS GO PLACES.png" alt="LET'S GO PLACES Banner">
+                                   <img src = "IMAGES/MITSUBISHI BANNER.png" alt="MITSUBISHI Banner">
+                                   <img src = "IMAGES/SUZUKI BANNER.png" alt="SUZUKI Banner">
+                            </div>
+                            <div class="dots">
+                                   <span class="dot active" onclick="goToSlide(0)"></span>
+                                   <span class="dot" onclick="goToSlide(1)"></span>
+                                   <span class="dot" onclick="goToSlide(2)"></span>
+                                   <span class="dot" onclick="goToSlide(3)"></span>
+                                   <span class="dot" onclick="goToSlide(4)"></span>
+                                   <span class="dot" onclick="goToSlide(5)"></span>
+                            </div>
+                     </div>
+              </div>
+       </header>
+
+       <script>
+              let currentSlide = 0;
+              const slider = document.querySelector('.slider');
+              const dots = document.querySelectorAll('.dot');
+              const totalSlides = dots.length;
+
+              function goToSlide(index) {
+                     currentSlide = index;
+                     slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+                     dots.forEach(dot => dot.classList.remove('active'));
+                     dots[currentSlide].classList.add('active');
+              }
+
+              function nextSlide() {
+                     currentSlide = (currentSlide + 1) % totalSlides;
+                     goToSlide(currentSlide);
+              }
+
+              setInterval(nextSlide, 3000); // auto-slide every 3 seconds
+       </script>
+</body>
+</html>
